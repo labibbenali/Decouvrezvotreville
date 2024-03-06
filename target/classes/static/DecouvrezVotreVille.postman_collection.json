@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "578f17d2-cdd2-4e17-9cc3-f5b828535066",
+		"name": "DecouvrezVotreVille",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19205757"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nom\":\"toto\",\n    \"prenom\":\"titi\",\n    \"mail\" : \"labib.benali94@gmail.com\",\n    \"motDePasse\" : \"abcd\",\n    \"adresse\" : \"3 le machine \",\n    \"dateNaissance\" : \"2020-02-05\",\n    \"ville\":{\n        \"codeInsee\":\"29200\",\n        \"nom\" : \"brest\",\n        \"codePostale\":\"29200\"\n    },\n    \"role\" :\"ADMIN\",\n    \"numTel\":1231312\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"labib.benali94@gmail.com\",\r\n    \"password\":\"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/auth/authenticate"
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJpYi5iZW5hbGk5NEBnbWFpbC5jb20iLCJpYXQiOjE3MDQyNzE3ODcsImV4cCI6MTcwNDM1ODE4N30.t6aqNbFtdKLmSqlz7W_m6loumViWGdljZaf2fV5WH6Y"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"toto1988\",\r\n    \"prenom\":\"titi\",\r\n    \"mail\" : \"labib.benali94@gmail.com\",\r\n    \"motDePasse\" : \"abcd\",\r\n    \"adresse\" : \"3 le machine 00000000 \",\r\n    \"dateNaissance\" : \"2020-02-05\",\r\n    \"ville\":{\r\n        \"codeInsee\":\"560059\",\r\n        \"nom\" : \"Vannes\",\r\n        \"codePostale\":\"56000\"\r\n    },\r\n    \"role\" :\"ADMIN\",\r\n    \"numTel\":1231312\r\n   \r\n   \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/utilisateurs/update"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_USER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJpYi5iZW5hbGk5NEBnbWFpbC5jb20iLCJpYXQiOjE3MDQxMjM2OTcsImV4cCI6MTcwNDIxMDA5N30.kR5pGckofUixUiNrqcBMXu788OStrDMN-IvdaJKAvY4"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/utilisateurs/delete/"
+			},
+			"response": []
+		},
+		{
+			"name": "create_point_interet",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJpYi5iZW5hbGk5NEBnbWFpbC5jb20iLCJpYXQiOjE3MDQyNzIwNzksImV4cCI6MTcwNDM1ODQ3OX0.EzW2iMroRHEbQjLu_1TduIfElGO4OMdG78p6iQlua3c"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    \r\n        {\r\n            \"pointInteret\":{\r\n               \"pointInteret\" : \"resto\"\r\n                },\r\n            \"email\":\"labib.benali94@gmail.com\"\r\n        }\r\n    \r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/pointinteret/create"
+			},
+			"response": []
+		},
+		{
+			"name": "add_point_interet_for_user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJpYi5iZW5hbGk5NEBnbWFpbC5jb20iLCJpYXQiOjE3MDQyNzIwNzksImV4cCI6MTcwNDM1ODQ3OX0.EzW2iMroRHEbQjLu_1TduIfElGO4OMdG78p6iQlua3c"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    \r\n        {\r\n            \"pointInteret\":[\r\n                ],\r\n            \"email\":\"labib.benali94@gmail.com\"\r\n        }\r\n    \r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/pointinteret/add"
+			},
+			"response": []
+		},
+		{
+			"name": "getUserInformation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsYWJpYi5iZW5hbGk5NEBnbWFpbC5jb20iLCJpYXQiOjE3MDQyNzIwNzksImV4cCI6MTcwNDM1ODQ3OX0.EzW2iMroRHEbQjLu_1TduIfElGO4OMdG78p6iQlua3c"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/utilisateurs/getUser/labib.benali94@gmail.com"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_pointInteret",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/pointinteret/delete/resto"
+			},
+			"response": []
+		}
+	]
+}

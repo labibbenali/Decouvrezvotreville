@@ -1,0 +1,46 @@
+springdoc:
+  default-produces-media-type: application/json
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: DEBUG
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    url: jdbc:mysql://sql8.freesqldatabase.com:3306/sql8688992?createDatabaseIfNotExist=true&userSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true
+    username: sql8688992
+    password: T7bjCuLgKz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  ##Specify DBMS
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "citydiscovery.email@gmail.com"
+    password: "dqir luiz mtju rtqt"
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
